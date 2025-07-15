@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Github, Linkedin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Send, Facebook } from "lucide-react";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -26,7 +26,6 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
     setTimeout(() => {
       toast({
         title: "Message sent successfully!",
@@ -65,21 +64,20 @@ const Contact = () => {
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com",
-      color: "hover:text-primary"
+      href: "https://github.com/Du0ngVanBa0",
+      color: "hover:text-secondary"
     },
     {
-      icon: Linkedin,
-      label: "LinkedIn",
-      href: "https://linkedin.com",
-      color: "hover:text-secondary"
+      icon: Facebook,
+      label: "Facebook",
+      href: "https://www.facebook.com/DuongVanBaoEmilia/",
+      color: "hover:text-primary"
     }
   ];
 
   return (
     <div className="min-h-screen bg-background py-20">
       <div className="container mx-auto px-4">
-        {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="hero-text">Get In Touch</span>
@@ -90,7 +88,6 @@ const Contact = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16">
-          {/* Contact Form */}
           <div className="animate-slide-up">
             <div className="bg-card border border-border rounded-2xl p-8 shadow-card">
               <h2 className="text-2xl font-bold mb-6">Send Message</h2>
@@ -157,7 +154,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Contact Information */}
           <div className="space-y-8 animate-slide-up">
             <div>
               <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
@@ -185,7 +181,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Social Links */}
             <div>
               <h3 className="text-xl font-bold mb-4">Follow Me</h3>
               <div className="flex space-x-4">
@@ -204,7 +199,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Availability Status */}
             <div className="bg-card border border-border rounded-2xl p-6">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
@@ -217,7 +211,6 @@ const Contact = () => {
               </p>
             </div>
 
-            {/* Response Time */}
             <div className="bg-gradient-primary rounded-2xl p-6 text-center">
               <h3 className="text-xl font-bold text-white mb-2">Quick Response</h3>
               <p className="text-white/80">

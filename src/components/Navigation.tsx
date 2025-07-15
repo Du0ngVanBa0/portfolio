@@ -17,12 +17,10 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
           <NavLink to="/" className="text-xl font-bold hero-text">
-            DVB
+            Bảo
           </NavLink>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
               <NavLink
@@ -39,7 +37,6 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* Mobile menu button */}
           <Button
             variant="ghost"
             size="icon"
@@ -50,7 +47,6 @@ const Navigation = () => {
           </Button>
         </div>
 
-        {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden py-4 space-y-2 animate-fade-in">
             {navLinks.map((link) => (

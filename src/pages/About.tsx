@@ -1,4 +1,4 @@
-import { Target, TrendingUp, Code, Database, Monitor, Settings } from "lucide-react";
+import { Target, TrendingUp, Code, Database, Monitor, Settings, GraduationCap, Award, Briefcase } from "lucide-react";
 
 const About = () => {
   const skills = [
@@ -28,10 +28,47 @@ const About = () => {
     }
   ];
 
+  const educationTimeline = [
+    {
+      date: "2021 - Present",
+      title: "University of Technology and Education",
+      description: "Pursuing a degree in Information Technology.",
+      icon: GraduationCap,
+      color: "text-blue-400"
+    },
+    {
+      date: "Dec 2022 - Feb 2024",
+      title: "CodeGym DaNang",
+      description: "Completed an intensive Bootcamp for Java Web Full-Stack Development.",
+      icon: Code,
+      color: "text-green-400"
+    }
+  ];
+
+  const certificationsTimeline = [
+    {
+      date: "Feb 2024",
+      title: "Full-Stack Java Web Certificate",
+      description: "Awarded by CodeGym for successfully completing the bootcamp program.",
+      icon: Award,
+      color: "text-purple-400"
+    }
+  ];
+
+  const workExperienceTimeline = [
+    {
+      date: "Oct 2024 - Present",
+      title: "Full Stack Web Intern",
+      company: "BIZDI Joint Stock Company",
+      description: "Contributing to the development of web applications, gaining hands-on experience with both front-end and back-end technologies in a professional environment.",
+      icon: Briefcase,
+      color: "text-teal-400"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-background py-20">
       <div className="container mx-auto px-4">
-        {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="hero-text">About Me</span>
@@ -42,7 +79,6 @@ const About = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16">
-          {/* Left Column - Goals */}
           <div className="space-y-8 animate-slide-up">
             <div className="bg-card border border-border rounded-2xl p-8 hover-lift">
               <div className="flex items-center mb-6">
@@ -52,8 +88,8 @@ const About = () => {
                 <h3 className="text-2xl font-bold">Short-Term Goal</h3>
               </div>
               <p className="text-muted-foreground leading-relaxed">
-                Enhance my web development skills through hands-on experience, focusing on 
-                front-end and back-end technologies. I aim to apply what I learn in real-world 
+                Enhance my web development skills through hands-on experience, focusing on
+                front-end and back-end technologies. I aim to apply what I learn in real-world
                 projects and internships to build a strong foundation for my career.
               </p>
             </div>
@@ -66,19 +102,18 @@ const About = () => {
                 <h3 className="text-2xl font-bold">Long-Term Goal</h3>
               </div>
               <p className="text-muted-foreground leading-relaxed">
-                To perfect my programming skills and become a key contributor within my company 
-                and team. I aspire to take on leadership roles and play an essential part in 
-                the success of major projects.
+                To perfect my programming skills and become a key contributor within my company
+                  and team. I aspire to take on leadership roles and play an essential part in
+                  the success of major projects.
               </p>
             </div>
           </div>
 
-          {/* Right Column - Skills */}
           <div className="animate-slide-up">
             <h3 className="text-3xl font-bold mb-8">My Technical Skills</h3>
             <div className="space-y-6">
               {skills.map((skillGroup, index) => (
-                <div 
+                <div
                   key={skillGroup.category}
                   className="bg-card border border-border rounded-2xl p-6 hover-lift"
                   style={{ animationDelay: `${index * 0.1}s` }}
@@ -91,7 +126,7 @@ const About = () => {
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {skillGroup.items.map((skill) => (
-                      <span 
+                      <span
                         key={skill}
                         className="px-3 py-1 bg-muted rounded-full text-sm text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-smooth cursor-default"
                       >
@@ -105,39 +140,77 @@ const About = () => {
           </div>
         </div>
 
-        {/* Experience Timeline */}
-        <div className="mt-20 animate-fade-in">
-          <h3 className="text-3xl font-bold text-center mb-12">My Journey</h3>
-          <div className="max-w-4xl mx-auto">
+        <div className="mt-24 animate-fade-in">
+          <h3 className="text-3xl font-bold text-center mb-12">Work Experience</h3>
+          <div className="max-w-3xl mx-auto">
             <div className="relative">
-              {/* Timeline line */}
-              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent"></div>
-              
-              {/* Timeline items */}
-              <div className="space-y-8">
-                <div className="relative flex items-center">
-                  <div className="w-4 h-4 bg-primary rounded-full border-4 border-background z-10"></div>
-                  <div className="ml-8 bg-card border border-border rounded-lg p-6 hover-lift">
-                    <h4 className="text-lg font-semibold text-primary">2024 - Present</h4>
-                    <h5 className="text-xl font-bold mb-2">Web Developer Journey</h5>
-                    <p className="text-muted-foreground">
-                      Focused on mastering full-stack development with modern technologies 
-                      and building real-world applications.
-                    </p>
+              <div className="absolute left-5 top-0 h-full w-0.5 bg-gradient-to-b from-teal-500 to-blue-500"></div>
+              <div className="space-y-12">
+                {workExperienceTimeline.map((item, index) => (
+                  <div key={index} className="relative flex items-start">
+                    <div className="absolute left-0 flex-shrink-0">
+                      <div className="w-10 h-10 rounded-full bg-gray-800 border-2 border-gray-600 flex items-center justify-center z-10">
+                        <item.icon className={`h-5 w-5 ${item.color}`} />
+                      </div>
+                    </div>
+                    <div className="ml-20 bg-gray-800 border border-gray-700 rounded-xl p-6 w-full transition-transform transform hover:-translate-y-1">
+                      <h4 className={`text-md font-semibold ${item.color}`}>{item.date}</h4>
+                      <h5 className="text-xl font-bold my-1 text-white">{item.title}</h5>
+                      <h6 className="text-lg font-semibold text-gray-400 mb-2">{item.company}</h6>
+                      <p className="text-gray-400">{item.description}</p>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="relative flex items-center">
-                  <div className="w-4 h-4 bg-secondary rounded-full border-4 border-background z-10"></div>
-                  <div className="ml-8 bg-card border border-border rounded-lg p-6 hover-lift">
-                    <h4 className="text-lg font-semibold text-secondary">2023</h4>
-                    <h5 className="text-xl font-bold mb-2">Fashion Shop Management System</h5>
-                    <p className="text-muted-foreground">
-                      Developed a comprehensive e-commerce management system using ReactJS 
-                      and Spring Boot with advanced features.
-                    </p>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-24 animate-fade-in">
+          <h3 className="text-3xl font-bold text-center mb-12">Education</h3>
+          <div className="max-w-3xl mx-auto">
+            <div className="relative">
+              <div className="absolute left-5 top-0 h-full w-0.5 bg-gradient-to-b from-blue-500 to-green-500"></div>
+              <div className="space-y-12">
+                {educationTimeline.map((item, index) => (
+                  <div key={index} className="relative flex items-start">
+                    <div className="absolute left-0 flex-shrink-0">
+                      <div className="w-10 h-10 rounded-full bg-gray-800 border-2 border-gray-600 flex items-center justify-center z-10">
+                        <item.icon className={`h-5 w-5 ${item.color}`} />
+                      </div>
+                    </div>
+                    <div className="ml-20 bg-gray-800 border border-gray-700 rounded-xl p-6 w-full transition-transform transform hover:-translate-y-1">
+                      <h4 className={`text-md font-semibold ${item.color}`}>{item.date}</h4>
+                      <h5 className="text-xl font-bold my-1 text-white">{item.title}</h5>
+                      <p className="text-gray-400">{item.description}</p>
+                    </div>
                   </div>
-                </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-24 animate-fade-in">
+          <h3 className="text-3xl font-bold text-center mb-12">Certifications</h3>
+          <div className="max-w-3xl mx-auto">
+            <div className="relative">
+              <div className="absolute left-5 top-0 h-full w-0.5 bg-gradient-to-b from-purple-500 to-orange-500"></div>
+              <div className="space-y-12">
+                {certificationsTimeline.map((item, index) => (
+                  <div key={index} className="relative flex items-start">
+                    <div className="absolute left-0 flex-shrink-0">
+                      <div className="w-10 h-10 rounded-full bg-gray-800 border-2 border-gray-600 flex items-center justify-center z-10">
+                        <item.icon className={`h-5 w-5 ${item.color}`} />
+                      </div>
+                    </div>
+                    <div className="ml-20 bg-gray-800 border border-gray-700 rounded-xl p-6 w-full transition-transform transform hover:-translate-y-1">
+                      <h4 className={`text-md font-semibold ${item.color}`}>{item.date}</h4>
+                      <h5 className="text-xl font-bold my-1 text-white">{item.title}</h5>
+                      <p className="text-gray-400">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
